@@ -1,0 +1,14 @@
+# Application
+bing-daily.png
+
+# Python
+*.pyc
+
+# Pyinstaller
+dist
+env
+build
+*.spec
+
+# VSCode
+.vscode

@@ -5,13 +5,14 @@
 import os
 import urllib
 import json
-from subprocess import call
+from PIL import Image
 
-bing_data_url = "https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=en-GB"
+BING_DATA_URL = "https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=en-GB"
 
-output = urllib.urlopen(bing_data_url).read()
+output = urllib.urlopen(BING_DATA_URL).read()
 jsonobj = json.loads(output)
 imgurl = jsonobj["images"][0]["url"]
 urllib.urlretrieve("https://www.bing.com/" + imgurl, "bing-daily.jpg")
-call(["convert", "bing-daily.jpg", "bing-daily.png"])
+img_object = Image.open("bing-daily.jpg")
+img_object.save("bing-daily.png", "PNG")
 os.remove("bing-daily.jpg")
