@@ -10,7 +10,7 @@ lazy-object-proxy==1.3.1
 macholib==1.9
 mccabe==0.6.1
 pefile==2017.11.5
-Pillow==5.0.0
+Pillow==9.3.0
 PyInstaller==3.3.1
 pylint==1.8.1
 singledispatch==3.4.0.3
